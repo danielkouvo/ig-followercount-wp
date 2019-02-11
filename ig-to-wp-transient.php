@@ -21,13 +21,13 @@ function get_ig_followers_count()
         // Get data from Instagram API
         $data = file_get_contents("https://api.instagram.com/v1/users/self/?access_token=" . $access_token);
 
-		// Convert json with objects converted into associative arrays
+        // Convert json with objects converted into associative arrays
         $json = json_decode($data, true);
 
-		//set transient and expiration with ig followers count as the transient value
-		set_transient('ig_followers_data', $json['data']['counts']['followed_by'], DAY_IN_SECONDS);
+        //set transient and expiration with ig followers count as the transient value
+        set_transient('ig_followers_data', $json['data']['counts']['followed_by'], DAY_IN_SECONDS);
 
-		return $json;
+        return $json;
 
 	}
 
