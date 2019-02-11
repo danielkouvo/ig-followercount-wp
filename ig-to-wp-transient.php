@@ -16,7 +16,7 @@ function get_ig_followers_count()
 	} else {
 
         // Access token for the Instagram account
-        $access_token = 'insert Instagram access token here';
+        $access_token = 'Insert Instagram access token here';
         
         // Get data from Instagram API
         $data = file_get_contents("https://api.instagram.com/v1/users/self/?access_token=" . $access_token);
